@@ -26,10 +26,11 @@ namespace Sovelluskehitys2024
         {
             InitializeComponent();
 
+
             this.MinHeight = 500;
             this.MinWidth = 1000;
 
-            ThemeManager.Current.ChangeTheme(this, "Light.Blue");
+            
 
             try
             {
@@ -131,7 +132,6 @@ namespace Sovelluskehitys2024
         }
 
 
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PaivitaDataGrid("SELECT * FROM tuotteet", "tuotteet", tuotelista);
@@ -225,6 +225,10 @@ namespace Sovelluskehitys2024
             PaivitaDataGrid("SELECT ti.id as id, a.nimi as asiakas, tu.nimi as tuote FROM tilaukset ti, asiakkaat a, tuotteet tu WHERE a.id=ti.asiakas_id AND tu.id=ti.tuote_id AND ti.toimitettu='0'", "tilaukset", tilauslista);
             PaivitaDataGrid("SELECT ti.id as id, a.nimi as asiakas, tu.nimi as tuote FROM tilaukset ti, asiakkaat a, tuotteet tu WHERE a.id=ti.asiakas_id AND tu.id=ti.tuote_id AND ti.toimitettu='1'", "tilaukset", toimitetutlista);
         }
-        
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
